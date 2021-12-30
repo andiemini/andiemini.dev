@@ -1,10 +1,10 @@
 {
-  "name": "andi-portfolio",
+  "name": "andiemini.dev",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "npx tailwindcss-cli build -i ./tailwind.css -o ./style.css"
+    "build": "npx tailwindcss-cli build -i ./tailwind.css -o ./style.css --minify"
   },
   "keywords": [],
   "author": "",
