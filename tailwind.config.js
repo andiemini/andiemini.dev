@@ -1,4 +1,5 @@
 module.exports = {
+  purge: ["/index.html"],
   content: [],
   theme: {
     extend: {},
@@ -8,7 +9,5 @@ module.exports = {
     }
   },
   plugins: [],
-  purge: [
-    "./*.css"
-  ]
+  
 }
