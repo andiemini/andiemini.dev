@@ -1,6 +1,5 @@
 module.exports = {
-  purge: ["/index.html"],
-  content: [],
+  content: ['*.html'],
   theme: {
     extend: {},
     fontFamily: {
@@ -9,5 +8,4 @@ module.exports = {
     }
   },
   plugins: [],
-  
 }
