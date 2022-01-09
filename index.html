@@ -1,110 +1,230 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>andiemini.dev</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Alpine Js -->
-    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-</head>
-<body class="bg-gray-50 font-ubuntu" >
-        <!-- Top navigation part -->
-        <header class="h-30 lg:h-24 flex items-center w-full">
-            <!-- Logo Container -->
-            <div class="container mx-auto flex items-center justify-between flex-col lg:flex-row" x-data="{open: false}">
-                <div class="flex items-center justify-between w-full mx-auto">
-                    <!-- Add icon here -->
-                    <a href="https://andiemini.dev/"><span class="font-robot">andiemini.dev;</span></a>
-                    <button class="inline-flex p-3 lg:hidden" @click="open = !open">
-                        <img src="/img/menu.svg" alt="menu button" class="w-1/3">
-                    </button>
-                </div>
-                
-                <nav class="hidden lg:flex"  :class="{'flex':open, 'hidden': !open}">
-                    <ul class="flex flex-col lg:flex-row">
-                        <li>
-                            <a href="#home" class="px-4 font-robot">../home</a>
-                        </li>
-                        <li>
-                            <a href="#about" class="px-4 font-robot">../about</a>
-                        </li>
-                        <li> 
-                            <a href="#projects" class="px-4 font-robot">../projects</a>
-                        </li>
-                        <li>
-                            <a href="#contact" class="px-4 font-robot">../contact</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
-        <main class="container px-4 lg:px-auto lg:mx-auto mt-10 ">
-            <!-- First part -->
-            <section id="home" class="flex flex-col items-center mb-20">
-                <div class="flex flex-col items-center">
-                    <img src="/img/andimemoji.png" alt="Andi Memoji" class="rounded-full w-1/4">
-                    <h2 class="text-3xl mt-4">Hi, I'm Andi🚀;</h2>
-                    <span class="max-w-3xl text-5xl font-bold mx-auto text-gray-800 text-center py-4">I'm a software engineer and a problem solver;</span>
-                    <!-- Spotify API to display what im currently listening -->
-                    <span class="my-4">This is what I'm currently listening on spotify -  </span>
-                </div>
-                <div class="mt-4 transition ease-in-out delay-100 hover:scale-125">
-                    <a href="https://www.linkedin.com/in/andi-emini" class="border-2 border-gray-800 px-4 py-3 uppercase tracking-wide font-thin hover:bg-gray-900 hover:text-white">Connect with me</a>
-                </div>
-            </section>
-            <!-- end first part-->
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>andiemini.dev</title>
+        <link rel="stylesheet" href="style.css">
+        <!-- Alpine Js -->
+        <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    </head>
+    <body class="font-ubuntu" x-data="{toggle: false}" :class="{'white':toggle,
+        'dark':
+        !toggle}">
 
-            <!-- About me  -->
+        <!-- Top navigation part -->
+        <div class="dark:bg-gray-800">
+            <header class="h-30 lg:h-24 flex items-center w-full">
+                <!-- Logo Container -->
+                <div class="container mx-auto flex items-center justify-between
+                    flex-col lg:flex-row" x-data="{open: false}">
+                    <div class="flex items-center justify-between w-full
+                        mx-auto">
+                        <!-- Add icon here -->
+                        <div class="flex items-center justify-center">
+                            <a href="https://andiemini.dev/"><span
+                                    class="font-robot
+                                    dark:text-white p-3">andiemini.dev;</span></a>
+                            <label for="toggle_dark" class="flex items-center
+                                cursor-pointer">
+                                <div class="relative">
+                                    <input type="checkbox" id="toggle_dark"
+                                        class="sr-only" @click="toggle=!toggle">
+                                    <div class="block bg-gray-600 w-14 h-8
+                                        rounded-full dark:bg-white"></div>
+                                    <div class="dot absolute left-1 top-1
+                                        bg-white
+                                        w-6 h-6 rounded-full transition
+                                        dark:bg-gray-800"></div>
+                                </div>
+                                <!-- label -->
+                                <div class="ml-3 text-gray-800 font-medium
+                                    dark:text-white">
+                                    Dark Mode
+                                </div>
+                            </label>
+                        </div>
+
+
+                        <button class="inline-flex p-3 lg:hidden
+                            dark:text-white"
+                            @click="open=
+                            !open">
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px"
+                                y="0px"
+                                width="30" height="30"
+                                viewBox="0 0 30 30"
+                                class="fill fill-slate-800 dark:fill-white"><path
+                                    d="M 3 7 A 1.0001 1.0001
+                                    0 1 0 3 9 L 27 9 A 1.0001 1.0001 0 1 0 27 7
+                                    L 3
+                                    7 z M 3 14 A 1.0001 1.0001 0 1 0 3 16 L 27
+                                    16 A
+                                    1.0001 1.0001 0 1 0 27 14 L 3 14 z M 3 21 A
+                                    1.0001 1.0001 0 1 0 3 23 L 27 23 A 1.0001
+                                    1.0001
+                                    0 1 0 27 21 L 3 21 z"></path></svg>
+                        </button>
+                    </div>
+
+                    <nav class="hidden lg:flex" :class="{'flex':open, 'hidden':
+                        !open}">
+                        <ul class="flex flex-col lg:flex-row">
+                            <li>
+                                <a href="#home" class="px-4 font-robot
+                                    dark:text-white">../home</a>
+                            </li>
+                            <li>
+                                <a href="#about" class="px-4 font-robot
+                                    dark:text-white">../about</a>
+                            </li>
+                            <li>
+                                <a href="#projects" class="px-4 font-robot
+                                    dark:text-white">../projects</a>
+                            </li>
+                            <li>
+                                <a href="#contact" class="px-4 font-robot
+                                    dark:text-white">../contact</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </header>
+            <main class="container px-4 lg:px-auto lg:mx-auto mt-10">
+                <!-- First part -->
+                <section id="home" class="flex flex-col items-center mb-20">
+                    <div class="flex flex-col items-center">
+                        <img src="/img/andimemoji.png" alt="Andi Memoji"
+                            class="rounded-full w-1/4">
+                        <h2 class="text-3xl mt-4 dark:text-white">Hi, I'm
+                            Andi🚀;</h2>
+                        <span class="max-w-3xl text-5xl font-bold mx-auto
+                            text-gray-800 text-center py-4 dark:text-white">I'm
+                            a
+                            software engineer
+                            and a problem solver;</span>
+                        <!-- Spotify API to display what im currently listening -->
+                        <!-- <span class="my-4 dark:text-white">This is what I'm currently listening on
+                            spotify - </span> -->
+                    </div>
+                    <div class="mt-4 transition ease-in-out delay-100
+                        hover:scale-125">
+                        <a href="https://www.linkedin.com/in/andi-emini"
+                            class="border-2 border-gray-800 px-4 py-3 uppercase
+                            tracking-wide font-thin hover:bg-gray-900
+                            hover:text-white dark:border-white
+                            dark:text-slate-800
+                            dark:bg-white">Connect with me</a>
+                    </div>
+                </section>
+                <!-- end first part-->
+
+                <!-- About me  -->
                 <section id="about" class="flex flex-col items-center mb-20">
                     <div class="my-20 relative">
-                        <h2 class="max-w-3xl text-4xl font-bold mx-auto text-gray-800 text-center mb-10">more about me;</h2>
-                        <span class="hidden lg:block text-gray-900 absolute top-16 -left-10 font-bold font-robot">&lt;?= </span>
-                        <p class="max-w-2xl">"Creative web developer dedicated to building and optimizing web functionality and workflow efficiencies. 
-                            Experience in designing and developing user interfaces, testing, debugging within web developing technologies. 
-                            Skilled in PHP, Laravel, jQuery, Graphic Design, and Web Design."
+                        <h2 class="max-w-3xl text-4xl font-bold mx-auto
+                            text-gray-800 text-center mb-10 dark:text-white">more
+                            about me;</h2>
+                        <span class="hidden lg:block text-gray-900 absolute
+                            top-16
+                            -left-10 font-bold font-robot dark:text-white">&lt;?=
+                        </span>
+                        <p class="max-w-2xl dark:text-white">"Creative web
+                            developer
+                            dedicated to
+                            building and optimizing web functionality and
+                            workflow
+                            efficiencies.
+                            Experience in designing and developing user
+                            interfaces,
+                            testing, debugging within web developing
+                            technologies.
+                            Skilled in PHP, Laravel, jQuery, Graphic Design, and
+                            Web
+                            Design."
                         </p>
-                        <span class="hidden lg:block text-gray-900 absolute -bottom-4 -left-10 font-bold font-robot">?&gt;</span>
+                        <span class="hidden lg:block text-gray-900 absolute
+                            -bottom-4 -left-10 font-bold font-robot
+                            dark:text-white">?&gt;</span>
                     </div>
                 </section>
                 <!-- experiences -->
                 <section class="flex flex-col items-center mb-20">
-                    <h2 class="max-w-3xl text-4xl font-bold mx-auto text-gray-800 text-center mb-10">my experiences;</h2>
+                    <h2 class="max-w-3xl text-4xl font-bold mx-auto
+                        text-gray-800
+                        text-center mb-10 dark:text-white">my experiences;</h2>
                     <div class="max-w-3xl mx-auto mb-5">
-                        <div class="flex items-center justify-evenly flex-col lg:flex-row">
+                        <div class="flex items-center justify-evenly flex-col
+                            lg:flex-row">
                             <div class="w-full flex items-center">
-                                <a href="https://starlabs.dev/" class="w-24 hover:opacity-75">
-                                    <img src="/img/starlabs.png" alt="starlabs" class="w-full">
+                                <a href="https://starlabs.dev/" class="w-24
+                                    hover:opacity-75">
+                                    <img src="/img/starlabs.png" alt="starlabs"
+                                        class="w-full">
                                 </a>
-                                <span class="hidden lg:block w-full border-t-2 border-gray-300 rounded mx-8"></span>
+                                <span class="hidden lg:block w-full border-t-2
+                                    border-gray-300 rounded mx-8"></span>
                             </div>
                             <div class="w-full relative">
-                                <span class="hidden lg:block text-gray-900 absolute -top-6 -left-12 font-bold font-robot">&lt;starlabs&gt;</span>
-                                <p class="text-gray-400 text-sm">October 2021 - Present</p>
-                                <h2 class="text-gray-800 font-bold text-lg">Team Leader - Interns</h2>
-                                <p>
-                                    Started working as a Team Leader for StarLabs Interns Team, where 
-                                    I had new responsibilites on how to organize the job with a new structure, managing and prioritizing the product backlog, 
-                                    general agile work and communicating or sharing ideas with other collegaues. 
+                                <span class="hidden lg:block text-gray-900
+                                    absolute
+                                    -top-6 -left-12 font-bold font-robot
+                                    dark:text-white">&lt;starlabs&gt;</span>
+                                <p class="text-gray-400 text-sm
+                                    dark:text-white">October
+                                    2021 -
+                                    Present</p>
+                                <h2 class="text-gray-800 font-bold text-lg
+                                    dark:text-white">Team
+                                    Leader - Interns</h2>
+                                <p class="dark:text-white">
+                                    Started working as a Team Leader for
+                                    StarLabs
+                                    Interns Team, where
+                                    I had new responsibilites on how to organize
+                                    the
+                                    job with a new structure, managing and
+                                    prioritizing the product backlog,
+                                    general agile work and communicating or
+                                    sharing
+                                    ideas with other collegaues.
                                 </p>
                             </div>
                         </div>
                     </div>
 
                     <div class="max-w-3xl mx-auto">
-                        <div class="flex items-center justify-evenly flex-col lg:flex-row">
+                        <div class="flex items-center justify-evenly flex-col
+                            lg:flex-row">
                             <div class="w-full flex items-center">
-                                <a href="https://starlabs.dev/" class="w-24 hover:opacity-75">
-                                    <img src="/img/starlabs.png" alt="starlabs" class="w-full">
+                                <a href="https://starlabs.dev/" class="w-24
+                                    hover:opacity-75">
+                                    <img src="/img/starlabs.png" alt="starlabs"
+                                        class="w-full">
                                 </a>
-                                <span class="hidden lg:block w-full border-t-2 border-gray-300 rounded mx-8"></span>
+                                <span class="hidden lg:block w-full border-t-2
+                                    border-gray-300 rounded mx-8"></span>
                             </div>
                             <div class="w-full relative">
-                                <p class="text-gray-400 text-sm">June 2020 - Present</p>
-                                <h2 class="text-gray-800 font-bold text-lg">Software Engineer</h2>
-                                <p>I'm a Software Engineer at StarLabs, I work with different tech stacks and my responsibilites include full stack development, 
-                                    analyzing and modifying existing software and websites, constructing and testing end-user applications </p>
-                                <span class="hidden lg:block text-gray-900 absolute -bottom-7 -left-12 font-bold font-robot">&lt;/starlabs&gt;</span>
+                                <p class="text-gray-400 text-sm
+                                    dark:text-white">June
+                                    2020 - Present</p>
+                                <h2 class="text-gray-800 font-bold text-lg
+                                    dark:text-white">Software
+                                    Engineer</h2>
+                                <p class="dark:text-white">I'm a Software
+                                    Engineer
+                                    at StarLabs, I work with
+                                    different tech stacks and my responsibilites
+                                    include full stack development,
+                                    analyzing and modifying existing software
+                                    and
+                                    websites, constructing and testing end-user
+                                    applications </p>
+                                <span class="hidden lg:block text-gray-900
+                                    absolute
+                                    -bottom-7 -left-12 font-bold font-robot
+                                    dark:text-white">&lt;/starlabs&gt;</span>
                             </div>
                         </div>
                     </div>
@@ -112,111 +232,157 @@
 
                 <!-- skills -->
                 <section class="flex flex-col items-center mb-20">
-                    <h2 class="max-w-3xl text-4xl font-bold mx-auto text-gray-800 text-center mb-10">some of my skills;</h2>
+                    <h2 class="max-w-3xl text-4xl font-bold mx-auto
+                        text-gray-800
+                        text-center mb-10 dark:text-white">some of my skills;</h2>
                     <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 relative">
-                        <span class="hidden lg:block text-gray-900 absolute -top-8 -left-10 font-bold font-robot">&lt;div x-data="{ msg: 'skills.js' }" &gt;</span>
-                        <div>
+                        <span class="hidden lg:block text-gray-900 absolute
+                            -top-8
+                            -left-10 font-bold font-robot dark:text-white">&lt;div
+                            x-data="{ msg:
+                            'skills.js' }" &gt;</span>
+                        <div class="hover:opacity-75">
                             <a href="https://www.php.net/">
                                 <img src="/img/php.png" alt="PHP" class="w-20">
                             </a>
-                        
+
                         </div>
 
-                        <div>
+                        <div class="hover:opacity-75">
                             <a href="https://laravel.com/">
-                                <img src="/img/laravel.svg.png" alt="Laravel" class="w-20">
+                                <img src="/img/laravel.svg.png" alt="Laravel"
+                                    class="w-20">
                             </a>
                         </div>
 
-                        <div>
+                        <div class="hover:opacity-75">
                             <a href="https://codex.wordpress.org/Main_Page">
-                                <img src="/img/wordpress.png" alt="WordPress" class="w-20">
+                                <img src="/img/wordpress.png" alt="WordPress"
+                                    class="w-20">
                             </a>
                         </div>
 
-                        <div>
-                            <img src="/img/htmlcss.png" alt="HTML/CSS" class="w-20">
+                        <div class="hover:opacity-75">
+                            <img src="/img/htmlcss.png" alt="HTML/CSS"
+                                class="w-20">
                         </div>
 
-                        <div>
+                        <div class="hover:opacity-75">
                             <a href="https://sass-lang.com/">
-                                <img src="/img/sass.png" alt="Sass" class="w-20">
+                                <img src="/img/sass.png" alt="Sass"
+                                    class="w-20">
                             </a>
                         </div>
 
-                        <div>
+                        <div class="hover:opacity-75">
                             <a href="https://tailwindcss.com/">
-                                <img src="/img/tailwindcss.svg.png" alt="tailwindcss" class="w-20">
+                                <img src="/img/tailwindcss.svg.png"
+                                    alt="tailwindcss" class="w-20">
                             </a>
                         </div>
 
-                        <div>
+                        <div class="hover:opacity-75">
                             <a href="https://alpinejs.dev/">
-                                <img src="/img/alpinejs.png" alt="AlpineJs" class="w-20">
+                                <img src="/img/alpinejs.png" alt="AlpineJs"
+                                    class="w-20">
                             </a>
                         </div>
 
-                        <div>
+                        <div class="hover:opacity-75">
                             <a href="https://nextjs.org/">
-                                <img src="/img/nextjs.svg.png" alt="NextJs" class="w-20">
+                                <img src="/img/nextjs.svg.png" alt="NextJs"
+                                    class="w-20">
                             </a>
                         </div>
-                        <span class="hidden lg:block text-gray-900 absolute -bottom-8 -left-10 font-bold font-robot">&lt;/div&gt;</span>
+                        <span class="hidden lg:block text-gray-900 absolute
+                            -bottom-8 -left-10 font-bold font-robot
+                            dark:text-white">&lt;/div&gt;</span>
                     </div>
-            </section>
-            <!-- End about me -->
+                </section>
+                <!-- End about me -->
 
-            <!-- my projects -->
-            <section id="projects" class="flex items-center flex-col mb-20">
-                <h2 class="max-w-3xl text-4xl font-bold mx-auto text-gray-800 text-center mb-10">my repositories;</h2>
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
-                    <div class="repo-card" data-repo="andiemini/andiemini.dev"></div>
-                    <div class="repo-card" data-repo="andiemini/Todo-Application"></div>
-                    <div class="repo-card" data-repo="andiemini/Weather-Application"></div>
-                    <div class="repo-card" data-repo="andiemini/Chatroom-Application"></div>
-                    <div class="repo-card" data-repo="andiemini/onepage_cv"></div>
-                    <div class="repo-card" data-repo="andiemini/peticion-project"></div>
-                </div>
-                <div class="my-10 transition ease-in-out delay-100 hover:scale-125">
-                    <a href="https://github.com/andiemini?tab=repositories" class="border-2 border-gray-800 px-4 py-3 uppercase tracking-wide font-thin hover:bg-gray-900 hover:text-white">Check More</a>
-                </div>
+                <!-- my projects -->
+                <section id="projects" class="flex items-center flex-col mb-20">
+                    <h2 class="max-w-3xl text-4xl font-bold mx-auto
+                        text-gray-800
+                        text-center mb-10 dark:text-white">my repositories;</h2>
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+                        <div class="repo-card"
+                            data-repo="andiemini/andiemini.dev"></div>
+                        <div class="repo-card"
+                            data-repo="andiemini/Todo-Application"></div>
+                        <div class="repo-card"
+                            data-repo="andiemini/Weather-Application"></div>
+                        <div class="repo-card"
+                            data-repo="andiemini/Chatroom-Application"></div>
+                        <div class="repo-card" data-repo="andiemini/onepage_cv"></div>
+                        <div class="repo-card"
+                            data-repo="andiemini/peticion-project"></div>
+                    </div>
+                    <div class="my-10 transition ease-in-out delay-100
+                        hover:scale-125">
+                        <a href="https://github.com/andiemini?tab=repositories"
+                            class="border-2 border-gray-800 px-4 py-3 uppercase
+                            tracking-wide font-thin hover:bg-gray-900
+                            hover:text-white dark:border-white
+                            dark:text-slate-800
+                            dark:bg-white">Check More</a>
+                    </div>
 
-            </section>
-            <!-- end of my projects -->
+                </section>
+                <!-- end of my projects -->
 
-            <!-- contact me -->
-            <section id="contact" class="flex items-center flex-col mb-20">
-                <h2 class="max-w-3xl text-4xl font-bold mx-auto text-gray-800 text-center mb-10">my social networks;</h2>
-                <p class="max-w-2xl mt-6">I know they're not really social networks but hey i guess this is one way to contact me!</p>
-                <div class="flex items-center justify-evenly mt-7">
-                    <a href="https://www.linkedin.com/in/andi-emini"><img src="/img/linkedin.png" alt="Linkedin" class="w-7 filter grayscale ml-3"></a>
-                    <a href="mailto: andiemini@hotmail.com"><img src="/img/email.png" alt="Email" class="w-7 filter grayscale ml-3"></a>
-                    <a href="https://github.com/andiemini"><img src="/img/github.png" alt="GitHub" class="w-7 filter grayscale ml-3"></a>
-                </div>
-            </section>
-            <!-- end contact me  -->
+                <!-- contact me -->
+                <section id="contact" class="flex items-center flex-col mb-20">
+                    <h2 class="max-w-3xl text-4xl font-bold mx-auto
+                        text-gray-800
+                        text-center mb-10 dark:text-white">my social networks;</h2>
+                    <p class="max-w-2xl mt-6 dark:text-white">I know they're not
+                        really social
+                        networks but hey i guess this is one way to contact me!</p>
+                    <div class="flex items-center justify-evenly mt-7">
+                        <a href="https://www.linkedin.com/in/andi-emini"><img
+                                src="/img/linkedin.png" alt="Linkedin"
+                                class="w-7
+                                filter grayscale ml-3"></a>
+                        <a href="mailto: andiemini@hotmail.com"><img
+                                src="/img/email.png" alt="Email" class="w-7
+                                filter
+                                grayscale ml-3"></a>
+                        <a href="https://github.com/andiemini"><img
+                                src="/img/github.png" alt="GitHub" class="w-7
+                                filter
+                                grayscale ml-3"></a>
+                    </div>
+                </section>
+                <!-- end contact me  -->
 
-        </main>
-        <footer class="h-24 flex items-center w-full justify-center">
-            <nav>
-                <ul class="flex flex-col lg:flex-row">
-                    <li>
-                        <a href="#home" class="px-4 font-robot">../home</a>
-                    </li>
-                    <li>
-                        <a href="#about" class="px-4 font-robot">../about</a>
-                    </li>
-                    <li> 
-                        <a href="#projects" class="px-4 font-robot">../projects</a>
-                    </li>
-                    <li>
-                        <a href="#contact" class="px-4 font-robot">../contact</a>
-                    </li>
-                </ul>
-            </nav>
-        </footer>
+            </main>
+            <footer class="h-24 flex items-center w-full justify-center">
+                <nav>
+                    <ul class="flex flex-col lg:flex-row">
+                        <li>
+                            <a href="#home" class="px-4 font-robot
+                                dark:text-white">../home</a>
+                        </li>
+                        <li>
+                            <a href="#about" class="px-4 font-robot
+                                dark:text-white">../about</a>
+                        </li>
+                        <li>
+                            <a href="#projects" class="px-4 font-robot
+                                dark:text-white">../projects</a>
+                        </li>
+                        <li>
+                            <a href="#contact" class="px-4 font-robot
+                                dark:text-white">../contact</a>
+                        </li>
+                    </ul>
+                </nav>
+            </footer>
+        </div>
 
         <!-- Repo cards -->
         <script src="https://tarptaeya.github.io/repo-card/repo-card.js"></script>
-</body>
+    </body>
 </html>
