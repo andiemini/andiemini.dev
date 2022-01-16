@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 /*
 ! tailwindcss v3.0.7 | MIT License | https://tailwindcss.com
 */
@@ -482,6 +484,33 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
 }
 
+.scale-animation{
+  transform: var(--tw-transform);
+  transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scale-animation:hover{
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+}
+
+@media (prefers-reduced-motion: no-preference){
+  .scale-animation:hover{
+    --tw-translate-y: -0.25rem;
+    transform: var(--tw-transform);
+  }
+
+  .scale-animation:hover{
+    --tw-scale-x: 1.1;
+    --tw-scale-y: 1.1;
+    transform: var(--tw-transform);
+  }
+}
+
 .sr-only{
   position: absolute;
   width: 1px;
@@ -542,6 +571,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   bottom: -2rem;
 }
 
+.my-14{
+  margin-top: 3.5rem;
+  margin-bottom: 3.5rem;
+}
+
+.my-16{
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
 .mx-auto{
   margin-left: auto;
   margin-right: auto;
@@ -567,6 +606,26 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 2.5rem;
 }
 
+.mt-20{
+  margin-top: 5rem;
+}
+
+.mb-16{
+  margin-bottom: 4rem;
+}
+
+.mb-10{
+  margin-bottom: 2.5rem;
+}
+
+.mb-7{
+  margin-bottom: 1.75rem;
+}
+
+.mr-4{
+  margin-right: 1rem;
+}
+
 .ml-3{
   margin-left: 0.75rem;
 }
@@ -581,10 +640,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .mt-4{
   margin-top: 1rem;
-}
-
-.mb-10{
-  margin-bottom: 2.5rem;
 }
 
 .mb-5{
@@ -611,12 +666,24 @@ Ensure the default browser behavior of the `hidden` attribute.
   display: inline-flex;
 }
 
+.table{
+  display: table;
+}
+
 .grid{
   display: grid;
 }
 
 .hidden{
   display: none;
+}
+
+.h-32{
+  height: 8rem;
+}
+
+.h-16{
+  height: 4rem;
 }
 
 .h-8{
@@ -631,12 +698,32 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 14rem;
 }
 
-.h-4{
-  height: 1rem;
+.h-20{
+  height: 5rem;
+}
+
+.h-7{
+  height: 1.75rem;
 }
 
 .h-24{
   height: 6rem;
+}
+
+.w-64{
+  width: 16rem;
+}
+
+.w-28{
+  width: 7rem;
+}
+
+.w-auto{
+  width: auto;
+}
+
+.w-1\/4{
+  width: 25%;
 }
 
 .w-full{
@@ -659,10 +746,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 6rem;
 }
 
-.w-4{
-  width: 1rem;
-}
-
 .w-20{
   width: 5rem;
 }
@@ -677,6 +760,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .max-w-2xl{
   max-width: 42rem;
+}
+
+.table-auto{
+  table-layout: auto;
 }
 
 .cursor-pointer{
@@ -719,6 +806,18 @@ Ensure the default browser behavior of the `hidden` attribute.
   gap: 1rem;
 }
 
+.self-center{
+  align-self: center;
+}
+
+.scroll-smooth{
+  scroll-behavior: smooth;
+}
+
+.break-words{
+  overflow-wrap: break-word;
+}
+
 .rounded-full{
   border-radius: 9999px;
 }
@@ -727,12 +826,33 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-radius: 0.25rem;
 }
 
+.border{
+  border-width: 1px;
+}
+
+.border-4{
+  border-width: 4px;
+}
+
 .border-2{
   border-width: 2px;
 }
 
+.border-b-4{
+  border-bottom-width: 4px;
+}
+
 .border-t-2{
   border-top-width: 2px;
+}
+
+.border-dotted{
+  border-style: dotted;
+}
+
+.border-white{
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity));
 }
 
 .border-gray-800{
@@ -743,6 +863,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .border-gray-300{
   --tw-border-opacity: 1;
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
+}
+
+.bg-zinc-900{
+  --tw-bg-opacity: 1;
+  background-color: rgb(24 24 27 / var(--tw-bg-opacity));
 }
 
 .bg-gray-600{
@@ -759,6 +884,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   fill: #1e293b;
 }
 
+.p-8{
+  padding: 2rem;
+}
+
 .p-3{
   padding: 0.75rem;
 }
@@ -766,6 +895,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .px-4{
   padding-left: 1rem;
   padding-right: 1rem;
+}
+
+.px-16{
+  padding-left: 4rem;
+  padding-right: 4rem;
 }
 
 .py-4{
@@ -782,6 +916,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   text-align: center;
 }
 
+.font-arcade{
+  font-family: Press Start 2P, sans-serif;
+}
+
 .font-ubuntu{
   font-family: Ubuntu;
 }
@@ -790,14 +928,19 @@ Ensure the default browser behavior of the `hidden` attribute.
   font-family: Robot Mono, monospace;
 }
 
-.text-3xl{
-  font-size: 1.875rem;
-  line-height: 2.25rem;
+.text-7xl{
+  font-size: 4.5rem;
+  line-height: 1;
 }
 
 .text-5xl{
   font-size: 3rem;
   line-height: 1;
+}
+
+.text-3xl{
+  font-size: 1.875rem;
+  line-height: 2.25rem;
 }
 
 .text-4xl{
@@ -833,6 +976,21 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .tracking-wide{
   letter-spacing: 0.025em;
+}
+
+.text-yellow-250{
+  --tw-text-opacity: 1;
+  color: rgb(255 255 0 / var(--tw-text-opacity));
+}
+
+.text-white{
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-red-600{
+  --tw-text-opacity: 1;
+  color: rgb(220 38 38 / var(--tw-text-opacity));
 }
 
 .text-gray-800{
@@ -877,6 +1035,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 input:checked ~ .dot {
   transform: translateX(100%);
+}
+
+body {
+  font-family: 'Press Start 2P';
 }
 
 .hover\:scale-125:hover{
