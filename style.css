@@ -928,11 +928,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   font-family: Robot Mono, monospace;
 }
 
-.text-7xl{
-  font-size: 4.5rem;
-  line-height: 1;
-}
-
 .text-5xl{
   font-size: 3rem;
   line-height: 1;
@@ -1143,5 +1138,10 @@ body {
 
   .lg\:items-start{
     align-items: flex-start;
+  }
+
+  .lg\:text-7xl{
+    font-size: 4.5rem;
+    line-height: 1;
   }
 }
